@@ -13,11 +13,11 @@ COLOR_OPTS="bg+:0,fg:15,fg+:1,border:8,hl+:2,prompt:15,hl:2,pointer:8,info:8,spi
 # DEFAULTS
 ##########
 
-LIMIT=20
-SUBREDDIT="wallpapers"
-declare -x WPP_FZF_DL_DIR=$HOME/Pictures
-declare -x DEFAULT_PREVIEW_POSITION="up"
-declare -x DEFAULT_PREVIEW_SIZE="60%"
+LIMIT=100
+SUBREDDIT="wallpaper+wallpapers"
+declare -x WPP_FZF_DL_DIR="$HOME/.wallpapers/reddit"
+declare -x DEFAULT_PREVIEW_POSITION="top"
+declare -x DEFAULT_PREVIEW_SIZE="67%"
 
 #### END OF USER SETTINGS ##########
 
