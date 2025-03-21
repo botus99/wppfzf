@@ -27,10 +27,10 @@ readonly BASH_BINARY="$(which bash)"
 readonly REDRAW_COMMAND="toggle-preview+toggle-preview"
 declare -r -x PREVIEW_ID="wpp_fzf_preview"
 
-WPP_FZF_UP="▲"
-WPP_FZF_DOWN="▼"
-WPP_FZF_PROMPT="❯"
-WPP_FZF_POINTER="➤"
+WPP_FZF_UP=" "
+WPP_FZF_DOWN=" "
+WPP_FZF_PROMPT=" "
+WPP_FZF_POINTER="󰸉"
 WPP_FZF_NO_UNICODE=""
 
 function ascii_change {
