@@ -81,7 +81,7 @@ function calculate_position {
             X=$((TERMINAL_COLUMNS - COLUMNS - 2))
             Y=1
             ;;
-        down|bottom)
+        bottom)
             X=1
             Y=$((TERMINAL_LINES - LINES - 1))
             ;;
@@ -152,9 +152,9 @@ function help {
     printf "     -p,            Location of the preview image\n";
     printf "                    'up' (default), 'left', 'right' or 'down'\n";
     printf "     -s,            Size of the preview window in percent\n";
-    printf "                    e.g. '60%%'(default)\n";
+    printf "                    e.g. '67%%'(default)\n";
     printf "     -d,            Directory to save the images to\n";
-    printf "                    the default save-path is \$HOME/Pictures\n\n";
+    printf "                    the default save-path is \$HOME/.wallpapers/reddit\n\n";
     printf "Press ctrl-p to preview an image in your default image viewer.\n";
     printf "Press ENTER to download an image to the default path.\n\n";
     printf "For more information got to:\n"
