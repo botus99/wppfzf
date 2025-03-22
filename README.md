@@ -1,6 +1,6 @@
 # wppfzf ![](https://img.shields.io/badge/version-0.1.0-green.svg) [![](https://img.shields.io/badge/license-GPLv3-orange.svg)](https://github.com/channel-42/wppfzf/blob/master/LICENSE) 
 <p align="center"><i>Browse and download images from reddit with fzf and ueberzug</i></p>
-<p align="center"><img src="https://github.com/channel-42/wppfzf/blob/master/resources/demo.gif" align="center" alt="demo gif"title="fancy demo"></p>
+<p align="center"><img src="https://github.com/botus99/wppfzf/blob/master/resources/demo.gif" align="center" alt="demo gif"title="fancy demo"></p>
 
 # Content
 
@@ -28,19 +28,7 @@ paru -S wppfzf
 Install the necessary dependencies first. Then, get the **latest release** by running:
 
 ```bash
-wget "https://github.com/channel-42/wppfzf/archive/v0.1.0.tar.gz" \
--O $HOME/wppfzf.tar.gz
-mkdir $HOME/.wppfzf_d
-tar -zxvf wppfzf.tar.gz -C $HOME/.wppfzf_d --strip-components 1
-rm -f $HOME/wppfzf.tar.gz
-cd $HOME/.wppfzf_d && sudo make install
-```
-> You can specify the installation directory by using `sudo make DESTDIR=/your/dir PREFIX="" install`
-
-Alternatively, to get the **bleeding edge** version (i.e. `HEAD`) run:
-
-```bash
-sudo wget "https://raw.githubusercontent.com/channel-42/wppfzf/master/wppfzf" \
+sudo wget "https://raw.githubusercontent.com/botus99/wppfzf/master/wppfzf" \
 -O /usr/bin/wppfzf
 sudo chmod +x /usr/bin/wppfzf
 ```
@@ -59,21 +47,21 @@ To search a specific subreddit, use the `-r` option, `-l N` will limit the api q
 
 > Note that less images may be show in wppfzf itself due to filtering of incompatible posts (e.g. imgur albums).
 
-wppfzf defaults to searching the last 20 posts of *r/wallpapers* and saving desired images to `$HOME/Pictures`. These settings, as well as the default preview window size and location, can be temporarily changed through the cli arguments. 
+wppfzf defaults to searching the last 20 posts of *r/wallpapers* and saving desired images to `$HOME/.wallpapers/reddit`. These settings, as well as the default preview window size and location, can be temporarily changed through the cli arguments. 
 
 To make these changes permanent, the script itself has to be edited. The settings are located at the top of the script: 
 
 ```bash
 # query limit 
-LIMIT=20
+LIMIT=100
 # default subreddit to search
-SUBREDDIT="wallpapers"
+SUBREDDIT="wallpaper+wallpapers"
 # dir to save images to
-declare -x WPP_FZF_DL_DIR=$HOME/Pictures
+declare -x WPP_FZF_DL_DIR=$HOME/.wallpapers/reddit
 # default preview position
 declare -x DEFAULT_PREVIEW_POSITION="up"
 # default preview size
-declare -x DEFAULT_PREVIEW_SIZE="60%"
+declare -x DEFAULT_PREVIEW_SIZE="67%"
 ```
 
 # Theming
@@ -82,7 +70,7 @@ Theming the fzf interface is done at the top of the script itself. To see all av
 
 ```bash
 # default interface colors: 'option:term_color_code'
-COLOR_OPTS="bg+:0,fg:7,fg+:1,border:8,hl+:2,prompt:14,hl:2,pointer:6,info:8,spinner:6"
+COLOR_OPTS="bg+:0,fg:15,fg+:1,border:8,hl+:2,prompt:15,hl:2,pointer:8,info:8,spinner:1"
 ```
 
 # Notes
