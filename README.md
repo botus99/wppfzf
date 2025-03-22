@@ -14,7 +14,9 @@
 
 ### Arch
 
-To install the AUR package, use your AUR-helper of choice. For example:
+This fork is not in the AUR.
+
+To install the original wppfzf AUR package, use your AUR-helper of choice. For example:
 ```bash
 paru -S wppfzf
 ```
@@ -47,7 +49,7 @@ To search a specific subreddit, use the `-r` option, `-l N` will limit the api q
 
 > Note that less images may be show in wppfzf itself due to filtering of incompatible posts (e.g. imgur albums).
 
-wppfzf defaults to searching the last 20 posts of *r/wallpapers* and saving desired images to `$HOME/.wallpapers/reddit`. These settings, as well as the default preview window size and location, can be temporarily changed through the cli arguments. 
+wppfzf defaults to searching the last 100 posts of *r/wallpaper* & *r/wallpapers* and saving desired images to `$HOME/.wallpapers/reddit`. These settings, as well as the default preview window size and location, can be temporarily changed through the cli arguments. 
 
 To make these changes permanent, the script itself has to be edited. The settings are located at the top of the script: 
 
