@@ -45,7 +45,7 @@ function ascii_change {
 # scrapes reddit and returns comma-delimited list: "title,url-to-image"
 function get_wpps {
     # set user agent
-    useragt="Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0"
+    useragt="Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0"
     # download json and scrape using python
     curl -A $useragt -s "https://www.reddit.com/r/$SUBREDDIT/hot/.json?t=all&limit=$LIMIT" |\
     python3 -c "
