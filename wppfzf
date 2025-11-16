@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # written by channel-42
 # Licensed under the GPL-3
 
@@ -45,7 +45,7 @@ function ascii_change {
 # scrapes reddit and returns comma-delimited list: "title,url-to-image"
 function get_wpps {
     # set user agent
-    useragt="Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0"
+    useragt="Mozilla/5.0 (X11; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0"
     # download json and scrape using python
     curl -A $useragt -s "https://www.reddit.com/r/$SUBREDDIT/hot/.json?t=all&limit=$LIMIT" |\
     python3 -c "
@@ -114,6 +114,49 @@ function draw_preview() {
     )
 }
 
+# my attempt at using timg instead of überzug
+#preview_height="$((${LINES} - 2))"
+#preview_width="$((${COLUMNS} - 2))"
+# draw preview image
+# 1. download preview to tempfile
+# 2. display image using timg
+#function draw_preview() {
+#    url=$(echo "$1" | cut -d";" -f 2)
+#    # download preview
+#    function download_preview() {
+#        wget -q "$1" -O /tmp/.fzfwpp_img
+#    }
+#    # download preview
+#    download_preview $url
+#    # restart timg and calc position data
+#    pkill timg
+#    calculate_position
+#    # display image using timg
+#    # --grid=3x1
+#    # -g "${COLUMNS}"x"${LINES}"
+#    timg --center -g "${COLUMNS}"x"${LINES}" --fit-width --pixelation=kitty /tmp/.fzfwpp_img
+#}
+
+# my attempt at using chafa instead of überzug
+# draw preview image
+# 1. download preview to tempfile
+# 2. display image using timg
+#function draw_preview() {
+#    url=$(echo "$1" | cut -d";" -f 2)
+#   # download preview
+#    function download_preview() {
+#        wget -q "$1" -O /tmp/.fzfwpp_img
+#    }
+#    # download preview
+#    download_preview $url
+#    # restart timg and calc position data
+#    pkill chafa
+#    calculate_position
+#    # display image using chafa
+#    chafa --optimize 0 --color-space din99d --preprocess on --view-size "${COLUMNS}"x"${LINES}" --align center --clear /tmp/.fzfwpp_img
+#}
+
+
 # download wallpaper from passed list line
 # "Name, url" -> wget url
 function download_wpp() {
@@ -148,7 +191,7 @@ function help {
     printf "     -r,            Subreddit to search\n";
     printf "                    e.g. 'wallpapers' (default)\n";
     printf "     -l,            Limit of posts to scrape/show\n";
-    printf "                    the default is 20\n";
+    printf "                    the default is 100\n";
     printf "     -p,            Location of the preview image\n";
     printf "                    'up' (default), 'left', 'right' or 'down'\n";
     printf "     -s,            Size of the preview window in percent\n";
@@ -187,6 +230,7 @@ function parse_opts() {
 # cleanup on exit
 function cleanup {
     pkill ueberzug
+    #pkill chafa
     printf "\n"
 }
 
