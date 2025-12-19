@@ -1,3 +1,6 @@
+# NOT WORKING ANYMORE! 
+Reddit seems to have changed the way that their API works, breaking this TUI app... I probably won't fix this. Sorry!
+
 # wppfzf ![](https://img.shields.io/badge/version-0.1.0-green.svg) [![](https://img.shields.io/badge/license-GPLv3-orange.svg)](https://github.com/channel-42/wppfzf/blob/master/LICENSE) 
 <p align="center"><i>Browse and download images from reddit with fzf and ueberzug</i></p>
 <p align="center"><img src="https://github.com/botus99/wppfzf/blob/master/resources/demo.gif" align="center" alt="demo gif"title="fancy demo"></p>
